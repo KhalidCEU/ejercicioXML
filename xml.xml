@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD -->
+<!DOCTYPE TVSCHEDULE [
+<!ELEMENT TVSCHEDULE (CHANNEL+)>
+<!ELEMENT CHANNEL (BANNER,DAY+)>
+<!ELEMENT BANNER (#PCDATA)>
+<!ELEMENT DAY (DATE,(HOLIDAY|PROGRAMSLOT+)+)>
+<!ELEMENT HOLIDAY (#PCDATA)>
+<!ELEMENT DATE (#PCDATA)>
+<!ELEMENT PROGRAMSLOT (TIME,TITLE,DESCRIPTION?)>
+<!ELEMENT TIME (#PCDATA)>
+<!ELEMENT TITLE (#PCDATA)>
+<!ELEMENT DESCRIPTION (#PCDATA)>
+<!ATTLIST TVSCHEDULE NAME CDATA #REQUIRED>
+<!ATTLIST CHANNEL CHAN CDATA #REQUIRED>
+<!ATTLIST PROGRAMSLOT VTR CDATA #IMPLIED>
+<!ATTLIST TITLE RATING CDATA #IMPLIED>
+<!ATTLIST TITLE LANGUAGE CDATA #IMPLIED>
+]>
+<!-- fin DTD -->
+
+<TVSCHEDULE NAME="Guide TV">
+
+    <CHANNEL CHAN="TF1">
+        <BANNER>TF1 - Première chaîne française</BANNER>
+        <DAY>
+            <DATE>2024-02-20</DATE>
+            <PROGRAMSLOT VTR="Live">
+                <TIME>20:50</TIME>
+                <TITLE RATING="TV-14" LANGUAGE="Anglais">Breaking Bad</TITLE>
+            </PROGRAMSLOT>
+            <PROGRAMSLOT>
+                <TIME>22:00</TIME>
+                <TITLE RATING="TV-14" LANGUAGE="Japonais">Death Note</TITLE>
+                <DESCRIPTION>Light Yagami découvre un carnet mystérieux qui lui permet de tuer toute personne dont il écrit le nom.</DESCRIPTION>
+            </PROGRAMSLOT>
+        </DAY>
+        <DAY>
+            <DATE>2024-02-21</DATE>
+            <HOLIDAY>Vacances d'hiver</HOLIDAY>
+            <PROGRAMSLOT>
+                <TIME>21:00</TIME>
+                <TITLE RATING="TV-14" LANGUAGE="Anglais">Breaking Bad</TITLE>
+                <DESCRIPTION>Walter White affronte de nouveaux défis dans le monde du crime.</DESCRIPTION>
+            </PROGRAMSLOT>
+        </DAY>
+    </CHANNEL>
+
+    <CHANNEL CHAN="France2">
+        <BANNER>France 2 - Chaîne généraliste</BANNER>
+        <DAY>
+            <DATE>2024-02-20</DATE>
+            <PROGRAMSLOT>
+                <TIME>20:30</TIME>
+                <TITLE RATING="TV-14" LANGUAGE="Japonais">Death Note</TITLE>
+                <DESCRIPTION>Le détective L se rapproche de Kira.</DESCRIPTION>
+            </PROGRAMSLOT>
+        </DAY>
+        <DAY>
+            <DATE>2024-02-21</DATE>
+            <PROGRAMSLOT>
+                <TIME>20:50</TIME>
+                <TITLE RATING="TV-14" LANGUAGE="Anglais">Breaking Bad</TITLE>
+                <DESCRIPTION>Jesse Pinkman prend une décision risquée.</DESCRIPTION>
+            </PROGRAMSLOT>
+            <PROGRAMSLOT>
+                <TIME>22:00</TIME>
+                <TITLE RATING="TV-14" LANGUAGE="Japonais">Death Note</TITLE>
+                <DESCRIPTION>La rivalité entre Light et L s'intensifie.</DESCRIPTION>
+            </PROGRAMSLOT>
+        </DAY>
+    </CHANNEL>
+</TVSCHEDULE>
